@@ -10,36 +10,57 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 import HomeScreen from "./src/screens/HomeScreen";
 import ListScreen from "./src/screens/ListScreen";
+import ImageScreens from "./src/screens/ImageScreens";
+import { View } from "react-native";
+import { Appbar } from 'react-native-paper';
 
 const Tab = createMaterialBottomTabNavigator();
 const HomeStack = createStackNavigator();
 export default App = () => {
   return (
+    // <View>
+    
     <NavigationContainer>
       {/* <Tab.Navigator
         initialRouteName="Home"
         activeColor="#f0edf6"
         inactiveColor="#3e2465"
-        barStyle={{ paddingBottom: 48 }}
+        barStyle={{ paddingBottom: 0  }}
+        
+        
       >
         <Tab.Screen
           name="Home"
           component={HomeScreen}
           options={{
             tabBarLabel: "Home",
+            
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="home" color={color} size={26} />
+            ),
+          }
+          }
+        />
+        <Tab.Screen
+          name="List"
+          component={ListScreen}
+          options={{
+            tabBarLabel: "List",
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="view-list" color={color} size={26} />
             ),
           }}
         />
       </Tab.Navigator> */}
-      <HomeStack.Navigator initialRouteName="List">
+      <HomeStack.Navigator initialRouteName="Home">
         <HomeStack.Screen name="Home"
           component={HomeScreen}/>
           <HomeStack.Screen name="List"
           component={ListScreen}/>
+          <HomeStack.Screen name="Image" component={ImageScreens}/>
       </HomeStack.Navigator>
     </NavigationContainer>
+    // </View>
   );
 };
 

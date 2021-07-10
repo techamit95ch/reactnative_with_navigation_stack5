@@ -17,8 +17,8 @@ export default ListScreen =()=> {
             <View>
                 <FlatList style
                 data={friends}
-                keySelector={ friend=>friend._id }
-                renderItem ={({item}) =>(<Text>{item.name}{ " => "} {item._id}</Text>)}
+                keyExtractor={ friend=>friend.name }
+                renderItem ={({item}) =>(<Text>{item.name}</Text>)}
                 />
             </View>
         )
